@@ -160,45 +160,51 @@ class _SensorPageState extends State<SensorPage> {
                           traceDust.add(double.tryParse(currentValue) ?? 0);
 
                           return Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                flex: 1,
-                                child: Column(
+                            child: ListView(
+                              // mainAxisAlignment: MainAxisAlignment.center,
+                              // shrinkWrap: true,
+                              children: <Widget>[
+                                Expanded(
+                                  flex: 1,
+                                  child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Text('Current value from Sensor',
-                                          style: TextStyle(fontSize: 14)),
-                                      Text('${currentValue} ug/m3',
+                                      Padding(
+                                        padding: const EdgeInsets.all(32),
+                                        child: Text(
+                                          '${currentValue}',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 24))
-                                    ]),
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: cb.Chessboard(
-                                  fen: _fen,
-                                  size: size,
-                                  orientation: cb.Color.WHITE,
-                                  onMove: (move) {
-                                    final nextFen = makeMove(_fen, {
-                                      'from': move.from,
-                                      'to': move.to,
-                                      'promotion': 'q',
-                                    });
-
-                                    if (nextFen != null) {
-                                      setState(() {
-                                        _fen = nextFen;
-                                      });
-                                    }
-                                  },
+                                              fontSize: 24),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
-                              )
-                            ],
-                          ));
+                                Expanded(
+                                  flex: 1,
+                                  child: cb.Chessboard(
+                                    fen: _fen,
+                                    size: size,
+                                    orientation: cb.Color.WHITE,
+                                    onMove: (move) {
+                                      final nextFen = makeMove(_fen, {
+                                        'from': move.from,
+                                        'to': move.to,
+                                        'promotion': 'q',
+                                      });
+
+                                      if (nextFen != null) {
+                                        setState(() {
+                                          _fen = nextFen;
+                                        });
+                                      }
+                                    },
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
                         } else {
                           return Text('Check the stream');
                         }
