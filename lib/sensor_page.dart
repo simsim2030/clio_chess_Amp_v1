@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:oscilloscope/oscilloscope.dart';
 
+import 'dart:math';
+import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
+    as cb;
+
 class SensorPage extends StatefulWidget {
   const SensorPage({Key key, this.device}) : super(key: key);
   final BluetoothDevice device;
