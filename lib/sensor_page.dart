@@ -8,6 +8,7 @@ import 'package:oscilloscope/oscilloscope.dart';
 import 'dart:math';
 import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
     as cb;
+import 'chess/utils.dart';
 
 class SensorPage extends StatefulWidget {
   const SensorPage({Key key, this.device}) : super(key: key);
@@ -114,6 +115,8 @@ class _SensorPageState extends State<SensorPage> {
     return utf8.decode(dataFromDevice);
   }
 
+  String _fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+
   @override
   Widget build(BuildContext context) {
     // Oscilloscope oscilloscope = Oscilloscope(
@@ -125,6 +128,9 @@ class _SensorPageState extends State<SensorPage> {
     //   yAxisMin: 0.0,
     //   dataSet: traceDust,
     // );
+
+    final viewport = MediaQuery.of(context).size;
+    final size = min(viewport.height, viewport.width);
 
     return WillPopScope(
       onWillPop: _onWillPop,
@@ -172,7 +178,24 @@ class _SensorPageState extends State<SensorPage> {
                               ),
                               Expanded(
                                 flex: 1,
-                                child: Text('test'),
+                                child: cb.Chessboard(
+                                  fen: _fen,
+                                  size: size,
+                                  orientation: cb.Color.WHITE,
+                                  onMove: (move) {
+                                    final nextFen = makeMove(_fen, {
+                                      'from': move.from,
+                                      'to': move.to,
+                                      'promotion': 'q',
+                                    });
+
+                                    if (nextFen != null) {
+                                      setState(() {
+                                        _fen = nextFen;
+                                      });
+                                    }
+                                  },
+                                ),
                               )
                             ],
                           ));
