@@ -160,11 +160,11 @@ class _SensorPageState extends State<SensorPage> {
                           var currentValue = _dataParser(snapshot.data);
                           // traceDust.add(double.tryParse(currentValue) ?? 0);
                           final _nextmove = '${currentValue}';
-                          final _from = _nextmove[0][1];
-                          final _to = '';
-                          if (_nextmove.length == 5) {
-                            final _from = _nextmove[0][1];
-                            final _to = _nextmove.substring(3, 4);
+                          var _from = '';
+                          var _to = '';
+                          if (currentValue.length == 5) {
+                            _from = _nextmove.substring(0, 2);
+                            _to = _nextmove.substring(2, 4);
                           }
 
                           return Center(
@@ -180,7 +180,7 @@ class _SensorPageState extends State<SensorPage> {
                                       Padding(
                                         padding: const EdgeInsets.all(32),
                                         child: Text(
-                                          '${currentValue}, ${currentValue.length}, ${_from}',
+                                          '${currentValue}, ${currentValue.length}, ${_to}',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 24),
