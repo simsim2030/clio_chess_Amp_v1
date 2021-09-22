@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert' show utf8;
+import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
@@ -136,7 +137,7 @@ class _SensorPageState extends State<SensorPage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Optical Dust Sensor'),
+          title: Text('Live Chessboard'),
         ),
         body: Container(
             child: !isReady
@@ -157,7 +158,14 @@ class _SensorPageState extends State<SensorPage> {
                         if (snapshot.connectionState ==
                             ConnectionState.active) {
                           var currentValue = _dataParser(snapshot.data);
-                          traceDust.add(double.tryParse(currentValue) ?? 0);
+                          // traceDust.add(double.tryParse(currentValue) ?? 0);
+                          final _nextmove = '${currentValue}';
+                          final _from = _nextmove[0][1];
+                          final _to = '';
+                          if (_nextmove.length == 5) {
+                            final _from = _nextmove[0][1];
+                            final _to = _nextmove.substring(3, 4);
+                          }
 
                           return Center(
                             child: ListView(
@@ -172,7 +180,7 @@ class _SensorPageState extends State<SensorPage> {
                                       Padding(
                                         padding: const EdgeInsets.all(32),
                                         child: Text(
-                                          '${currentValue}',
+                                          '${currentValue}, ${currentValue.length}, ${_from}',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 24),
@@ -189,11 +197,11 @@ class _SensorPageState extends State<SensorPage> {
                                     orientation: cb.Color.WHITE,
                                     onMove: (move) {
                                       final nextFen = makeMove(_fen, {
-                                        'from': move.from,
-                                        'to': move.to,
+                                        'from': _from,
+                                        'to': _to,
                                         'promotion': 'q',
                                       });
-
+                                      // if condition met -> board update
                                       if (nextFen != null) {
                                         setState(() {
                                           _fen = nextFen;
