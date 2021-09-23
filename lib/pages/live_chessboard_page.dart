@@ -25,7 +25,7 @@ class _LiveChessboardPageState extends State<LiveChessboardPage> {
   final String CHARACTERISTIC_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb";
   bool isReady;
   Stream<List<int>> stream;
-  List<double> traceDust = List();
+  // List<double> traceDust = List();
 
   @override
   void initState() {

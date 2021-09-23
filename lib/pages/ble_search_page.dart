@@ -3,11 +3,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'live_chessboard_page.dart';
+import 'home_page.dart';
 import '../widgets.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
 class FlutterBlueApp extends StatelessWidget {
-  static const routeName = '/ble_search_page';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,10 +60,16 @@ class BluetoothOffScreen extends StatelessWidget {
 }
 
 class FindDevicesScreen extends StatelessWidget {
+  static const routeName = '/ble_search_page';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            }),
         title: Text('Find Devices'),
       ),
       body: RefreshIndicator(

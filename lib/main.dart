@@ -27,11 +27,13 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Colors.white)),
       ),
-      home: MainScreen(),
+      // home: MainScreen(),
+      initialRoute: '/',
       routes: {
-        FlutterBlueApp.routeName: (ctx) => FlutterBlueApp(),
+        FindDevicesScreen.routeName: (ctx) => FindDevicesScreen(),
         OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
         SettingPage.routeName: (ctx) => SettingPage(),
+        '/': (ctx) => MainScreen(),
       },
     );
   }

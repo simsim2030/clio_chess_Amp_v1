@@ -6,6 +6,7 @@ import 'offline_chess_page.dart';
 // import '../homepage_model/homepage_category_item.dart';
 
 class MainScreen extends StatelessWidget {
+  static const routeName = '/home_page';
   @override
 //   _MainScreenState createState() => _MainScreenState();
 // }
@@ -49,7 +50,7 @@ class MainScreen extends StatelessWidget {
           // BLE Button
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, FlutterBlueApp.routeName);
+              Navigator.pushNamed(context, FindDevicesScreen.routeName);
             },
             style: ButtonStyle(
                 backgroundColor:
