@@ -94,7 +94,7 @@ class FindDevicesScreen extends StatelessWidget {
                                     onPressed: () => Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                DeviceScreen(device: d))),
+                                                LiveChessboardPage(device: d))),
                                   );
                                 }
                                 return Text(snapshot.data.toString());
