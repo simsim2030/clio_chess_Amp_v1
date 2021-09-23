@@ -166,6 +166,17 @@ class _SensorPageState extends State<SensorPage> {
                             _from = _nextmove.substring(0, 2);
                             _to = _nextmove.substring(2, 4);
                           }
+                          final nextFen = makeMove(_fen, {
+                            'from': _from,
+                            'to': _to,
+                            'promotion': 'q',
+                          });
+                          // if condition met -> board update
+                          if (nextFen != null) {
+                            // setState(() {
+                            _fen = nextFen;
+                            // });
+                          }
 
                           return Center(
                             child: ListView(
@@ -180,7 +191,7 @@ class _SensorPageState extends State<SensorPage> {
                                       Padding(
                                         padding: const EdgeInsets.all(32),
                                         child: Text(
-                                          '${currentValue}, ${currentValue.length}, ${_to}',
+                                          '${currentValue}, ${_from}, ${_to}',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 24),
@@ -196,17 +207,17 @@ class _SensorPageState extends State<SensorPage> {
                                     size: size,
                                     orientation: cb.Color.WHITE,
                                     onMove: (move) {
-                                      final nextFen = makeMove(_fen, {
-                                        'from': _from,
-                                        'to': _to,
-                                        'promotion': 'q',
-                                      });
-                                      // if condition met -> board update
-                                      if (nextFen != null) {
-                                        setState(() {
-                                          _fen = nextFen;
-                                        });
-                                      }
+                                      // final nextFen = makeMove(_fen, {
+                                      //   'from': _from,
+                                      //   'to': _to,
+                                      //   'promotion': 'q',
+                                      // });
+                                      // // if condition met -> board update
+                                      // if (nextFen != null) {
+                                      //   setState(() {
+                                      //     _fen = nextFen;
+                                      //   });
+                                      // }
                                     },
                                   ),
                                 )
