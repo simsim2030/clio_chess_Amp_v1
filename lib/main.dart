@@ -5,8 +5,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app_esp32_dust_sensor/sensor_page.dart';
-import 'package:flutter_app_esp32_dust_sensor/widgets.dart';
+import 'live_chessboard.dart';
+import 'widgets.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
 void main() {

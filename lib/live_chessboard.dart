@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:oscilloscope/oscilloscope.dart';
 
 import 'dart:math';
 import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
@@ -120,15 +119,6 @@ class _SensorPageState extends State<SensorPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Oscilloscope oscilloscope = Oscilloscope(
-    //   showYAxis: true,
-    //   padding: 0.0,
-    //   backgroundColor: Colors.black,
-    //   traceColor: Colors.white,
-    //   yAxisMax: 3000.0,
-    //   yAxisMin: 0.0,
-    //   dataSet: traceDust,
-    // );
 
     final viewport = MediaQuery.of(context).size;
     final size = min(viewport.height, viewport.width);
@@ -158,7 +148,6 @@ class _SensorPageState extends State<SensorPage> {
                         if (snapshot.connectionState ==
                             ConnectionState.active) {
                           var currentValue = _dataParser(snapshot.data);
-                          // traceDust.add(double.tryParse(currentValue) ?? 0);
                           final _nextmove = '${currentValue}';
                           var _from = '';
                           var _to = '';
@@ -173,15 +162,11 @@ class _SensorPageState extends State<SensorPage> {
                           });
                           // if condition met -> board update
                           if (nextFen != null) {
-                            // setState(() {
                             _fen = nextFen;
-                            // });
+                            
                           }
-
                           return Center(
                             child: ListView(
-                              // mainAxisAlignment: MainAxisAlignment.center,
-                              // shrinkWrap: true,
                               children: <Widget>[
                                 Expanded(
                                   flex: 1,
@@ -207,17 +192,6 @@ class _SensorPageState extends State<SensorPage> {
                                     size: size,
                                     orientation: cb.Color.WHITE,
                                     onMove: (move) {
-                                      // final nextFen = makeMove(_fen, {
-                                      //   'from': _from,
-                                      //   'to': _to,
-                                      //   'promotion': 'q',
-                                      // });
-                                      // // if condition met -> board update
-                                      // if (nextFen != null) {
-                                      //   setState(() {
-                                      //     _fen = nextFen;
-                                      //   });
-                                      // }
                                     },
                                   ),
                                 )
