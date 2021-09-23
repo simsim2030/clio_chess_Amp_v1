@@ -26,66 +26,69 @@ class MainScreen extends StatelessWidget {
               }),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Chess Button
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => OfflineChessPage()),
-                );
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.amber)),
-              child: Text(
-                'Chessboard',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            // BLE Button
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FlutterBlueApp()),
-                );
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blueAccent)),
-              child: Text(
-                'Live Chess',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            // Data Testing Button
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => setting()),
-            //     );
-            //   },
-            //   style: ButtonStyle(
-            //       backgroundColor:
-            //           MaterialStateProperty.all<Color>(Colors.blueAccent)),
-            //   child: Text(
-            //     'Data Test',
-            //     style: TextStyle(
-            //       color: Colors.white,
-            //     ),
-            //   ),
-            // ),
-          ],
+      body: GridView(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
         ),
+        children: [
+          // Chess Button
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OfflineChessPage()),
+              );
+            },
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.amber)),
+            child: Text(
+              'Chessboard',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          // BLE Button
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FlutterBlueApp()),
+              );
+            },
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.blueAccent)),
+            child: Text(
+              'Live Chess',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          // Data Testing Button
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => setting()),
+          //     );
+          //   },
+          //   style: ButtonStyle(
+          //       backgroundColor:
+          //           MaterialStateProperty.all<Color>(Colors.blueAccent)),
+          //   child: Text(
+          //     'Data Test',
+          //     style: TextStyle(
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
+        ],
       ),
     );
   }
