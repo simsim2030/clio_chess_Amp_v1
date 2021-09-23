@@ -168,7 +168,6 @@ class _LiveChessboardPageState extends State<LiveChessboardPage> {
                           return Center(
                             child: ListView(
                               children: <Widget>[
-                                
                                 Expanded(
                                   flex: 1,
                                   child: cb.Chessboard(
