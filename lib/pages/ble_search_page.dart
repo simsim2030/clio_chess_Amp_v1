@@ -7,6 +7,7 @@ import '../widgets.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
 class FlutterBlueApp extends StatelessWidget {
+  static const routeName = '/ble_search_page';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

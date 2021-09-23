@@ -1,3 +1,4 @@
+import 'package:clio_chess_app/pages/offline_chess_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/ble_search_page.dart';
 
@@ -9,12 +10,8 @@ class HomeCategoryItem extends StatelessWidget {
   HomeCategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return FlutterBlueApp();
-        },
-      ),
+    Navigator.of(ctx).pushNamed(
+      OfflineChessPage.routeName,
     );
   }
 

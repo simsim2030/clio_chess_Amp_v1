@@ -7,11 +7,14 @@ import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
 import '../chess/utils.dart';
 
 class OfflineChessPage extends StatefulWidget {
+  static const routeName = '/Offline_chess_page';
   @override
   _OfflineChessState createState() => _OfflineChessState();
+  
 }
 
 class _OfflineChessState extends State<OfflineChessPage> {
+  
   String _fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 
   @override
@@ -21,7 +24,7 @@ class _OfflineChessState extends State<OfflineChessPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Random Chess"),
+        title: Text("Chessboard"),
       ),
       body: Center(
         child: cb.Chessboard(
