@@ -1,3 +1,4 @@
+import 'package:clio_chess_app/pages/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'ble_search_page.dart';
 import 'offline_chess_page.dart';
@@ -55,6 +56,21 @@ class MainScreen extends StatelessWidget {
                     MaterialStateProperty.all<Color>(Colors.blueAccent)),
             child: Text(
               'Live Chess',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          // Setting Button
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SettingPage.routeName);
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+            ),
+            child: Text(
+              'Settings',
               style: TextStyle(
                 color: Colors.white,
               ),

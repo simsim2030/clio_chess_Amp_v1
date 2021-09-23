@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/ble_search_page.dart';
-import 'pages/live_chessboard_page.dart';
 import 'pages/offline_chess_page.dart';
+import 'pages/setting_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
       routes: {
         FlutterBlueApp.routeName: (ctx) => FlutterBlueApp(),
         OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
+        SettingPage.routeName: (ctx) => SettingPage(),
       },
     );
   }
