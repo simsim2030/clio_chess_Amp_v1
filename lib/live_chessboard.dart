@@ -1,3 +1,5 @@
+// Live chessboard page after pressing connect
+
 import 'dart:async';
 import 'dart:convert' show utf8;
 import 'package:flutter/foundation.dart';
@@ -10,15 +12,15 @@ import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
     as cb;
 import 'chess/utils.dart';
 
-class SensorPage extends StatefulWidget {
-  const SensorPage({Key key, this.device}) : super(key: key);
+class LiveChessboardPage extends StatefulWidget {
+  const LiveChessboardPage({Key key, this.device}) : super(key: key);
   final BluetoothDevice device;
 
   @override
-  _SensorPageState createState() => _SensorPageState();
+  _LiveChessboardPageState createState() => _LiveChessboardPageState();
 }
 
-class _SensorPageState extends State<SensorPage> {
+class _LiveChessboardPageState extends State<LiveChessboardPage> {
   final String SERVICE_UUID = "0000ffe0-0000-1000-8000-00805f9b34fb";
   final String CHARACTERISTIC_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb";
   bool isReady;
@@ -119,7 +121,6 @@ class _SensorPageState extends State<SensorPage> {
 
   @override
   Widget build(BuildContext context) {
-
     final viewport = MediaQuery.of(context).size;
     final size = min(viewport.height, viewport.width);
 
@@ -163,7 +164,6 @@ class _SensorPageState extends State<SensorPage> {
                           // if condition met -> board update
                           if (nextFen != null) {
                             _fen = nextFen;
-                            
                           }
                           return Center(
                             child: ListView(
@@ -191,8 +191,7 @@ class _SensorPageState extends State<SensorPage> {
                                     fen: _fen,
                                     size: size,
                                     orientation: cb.Color.WHITE,
-                                    onMove: (move) {
-                                    },
+                                    onMove: (move) {},
                                   ),
                                 )
                               ],

@@ -115,7 +115,7 @@ class FindDevicesScreen extends StatelessWidget {
                           onTap: () => Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
                             r.device.connect();
-                            return SensorPage(device: r.device);
+                            return LiveChessboardPage(device: r.device);
                           })),
                         ),
                       )
