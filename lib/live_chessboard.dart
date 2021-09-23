@@ -168,6 +168,16 @@ class _LiveChessboardPageState extends State<LiveChessboardPage> {
                           return Center(
                             child: ListView(
                               children: <Widget>[
+                                
+                                Expanded(
+                                  flex: 1,
+                                  child: cb.Chessboard(
+                                    fen: _fen,
+                                    size: size,
+                                    orientation: cb.Color.WHITE,
+                                    onMove: (move) {},
+                                  ),
+                                ),
                                 Expanded(
                                   flex: 1,
                                   child: Column(
@@ -185,15 +195,6 @@ class _LiveChessboardPageState extends State<LiveChessboardPage> {
                                     ],
                                   ),
                                 ),
-                                Expanded(
-                                  flex: 1,
-                                  child: cb.Chessboard(
-                                    fen: _fen,
-                                    size: size,
-                                    orientation: cb.Color.WHITE,
-                                    onMove: (move) {},
-                                  ),
-                                )
                               ],
                             ),
                           );
