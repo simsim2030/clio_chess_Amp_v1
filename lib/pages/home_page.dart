@@ -22,6 +22,7 @@ class MainScreen extends StatelessWidget {
         title: const Text("Clio Chess"),
       ),
       body: GridView(
+        padding: const EdgeInsets.all(25),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
@@ -30,6 +31,7 @@ class MainScreen extends StatelessWidget {
         ),
         children: HOMEPAGE_CATEGORIES
             .map((catData) => HomeCategoryItem(
+                  catData.id,
                   catData.title,
                   catData.color,
                 ))

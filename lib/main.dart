@@ -12,6 +12,17 @@ class MyApp extends StatelessWidget {
       title: 'Clio Chess',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        accentColor: Colors.white,
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        fontFamily: 'Raleway-Bold',
+        textTheme: ThemeData.light().textTheme.copyWith(
+            body1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+            body2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+            title: TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
       ),
       home: MainScreen(),
     );

@@ -6,7 +6,6 @@ import 'live_chessboard_page.dart';
 import '../widgets.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
-
 class FlutterBlueApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
