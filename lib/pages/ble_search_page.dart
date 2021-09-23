@@ -2,13 +2,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'live_chessboard.dart';
-import 'widgets.dart';
+import 'live_chessboard_page.dart';
+import '../widgets.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
-void main() {
-  runApp(FlutterBlueApp());
-}
 
 class FlutterBlueApp extends StatelessWidget {
   @override

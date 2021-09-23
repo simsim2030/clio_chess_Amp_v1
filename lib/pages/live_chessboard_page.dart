@@ -10,7 +10,7 @@ import 'package:flutter_blue/flutter_blue.dart';
 import 'dart:math';
 import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
     as cb;
-import 'chess/utils.dart';
+import '../chess/utils.dart';
 
 class LiveChessboardPage extends StatefulWidget {
   const LiveChessboardPage({Key key, this.device}) : super(key: key);
