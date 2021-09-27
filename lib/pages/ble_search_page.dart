@@ -65,11 +65,11 @@ class FindDevicesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
-            }),
+        // leading: IconButton(
+        //     icon: Icon(Icons.arrow_back),
+        //     onPressed: () {
+        //       Navigator.popUntil(context, ModalRoute.withName('/'));
+        //     }),
         title: Text('Find Devices'),
       ),
       body: RefreshIndicator(

@@ -4,6 +4,7 @@ import 'pages/home_page.dart';
 import 'pages/ble_search_page.dart';
 import 'pages/offline_chess_page.dart';
 import 'pages/setting_page.dart';
+import 'pages/tab_menu.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,14 +28,16 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Colors.white)),
       ),
+      home: TabScreen(),
+
       // home: MainScreen(),
-      initialRoute: '/',
-      routes: {
-        FindDevicesScreen.routeName: (ctx) => FindDevicesScreen(),
-        OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
-        SettingPage.routeName: (ctx) => SettingPage(),
-        '/': (ctx) => MainScreen(),
-      },
+      // initialRoute: '/',
+      // routes: {
+      //   FindDevicesScreen.routeName: (ctx) => FindDevicesScreen(),
+      //   OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
+      //   SettingPage.routeName: (ctx) => SettingPage(),
+      //   '/': (ctx) => MainScreen(),
+      // },
     );
   }
 }
