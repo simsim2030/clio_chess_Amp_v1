@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
 import 'pages/ble_search_page.dart';
 import 'pages/offline_chess_page.dart';
 import 'pages/setting_page.dart';
