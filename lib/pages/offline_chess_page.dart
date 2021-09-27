@@ -10,11 +10,9 @@ class OfflineChessPage extends StatefulWidget {
   static const routeName = '/Offline_chess_page';
   @override
   _OfflineChessState createState() => _OfflineChessState();
-  
 }
 
 class _OfflineChessState extends State<OfflineChessPage> {
-  
   String _fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 
   @override
@@ -25,6 +23,12 @@ class _OfflineChessState extends State<OfflineChessPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Chessboard"),
+        leading: GestureDetector(
+          onTap: () {/* Write listener code here */},
+          child: Icon(
+            Icons.menu, // add custom icons also
+          ),
+        ),
       ),
       body: Center(
         child: cb.Chessboard(
@@ -42,7 +46,6 @@ class _OfflineChessState extends State<OfflineChessPage> {
               setState(() {
                 _fen = nextFen;
               });
-
             }
           },
         ),

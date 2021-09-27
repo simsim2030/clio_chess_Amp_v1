@@ -71,6 +71,31 @@ class FindDevicesScreen extends StatelessWidget {
         //       Navigator.popUntil(context, ModalRoute.withName('/'));
         //     }),
         title: Text('Find Devices'),
+        leading: GestureDetector(
+          onTap: () {/* Write listener code here */},
+          child: Icon(
+            Icons.menu, // add custom icons also
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () =>
+                  FlutterBlue.instance.startScan(timeout: Duration(seconds: 4)),
+              child: Icon(
+                Icons.search,
+                size: 26.0,
+              ),
+            ),
+          ),
+          // Padding(
+          //     padding: EdgeInsets.only(right: 20.0),
+          //     child: GestureDetector(
+          //       onTap: () {},
+          //       child: Icon(Icons.more_vert),
+          //     )),
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: () =>
@@ -130,24 +155,25 @@ class FindDevicesScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: StreamBuilder<bool>(
-        stream: FlutterBlue.instance.isScanning,
-        initialData: false,
-        builder: (c, snapshot) {
-          if (snapshot.data) {
-            return FloatingActionButton(
-              child: Icon(Icons.stop),
-              onPressed: () => FlutterBlue.instance.stopScan(),
-              backgroundColor: Colors.red,
-            );
-          } else {
-            return FloatingActionButton(
-                child: Icon(Icons.search),
-                onPressed: () => FlutterBlue.instance
-                    .startScan(timeout: Duration(seconds: 4)));
-          }
-        },
-      ),
+      // floatingActionButton: StreamBuilder<bool>(
+      //   stream: FlutterBlue.instance.isScanning,
+      //   initialData: false,
+      //   builder: (c, snapshot) {
+      //     if (snapshot.data) {
+      //       return FloatingActionButton(
+      //         child: Icon(Icons.stop),
+      //         onPressed: () => FlutterBlue.instance.stopScan(),
+      //         backgroundColor: Colors.red,
+      //       );
+      //     } else {
+      //       return FloatingActionButton(
+      //         child: Icon(Icons.search),
+      //         onPressed: () =>
+      //             FlutterBlue.instance.startScan(timeout: Duration(seconds: 4)),
+      //       );
+          // }
+        // },
+      // ),
     );
   }
 }
