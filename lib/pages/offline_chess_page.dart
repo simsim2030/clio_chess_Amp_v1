@@ -1,4 +1,5 @@
 import 'dart:math';
+import '../widgets/main_drawer.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
@@ -23,13 +24,14 @@ class _OfflineChessState extends State<OfflineChessPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Chessboard"),
-        leading: GestureDetector(
-          onTap: () {/* Write listener code here */},
-          child: Icon(
-            Icons.menu, // add custom icons also
-          ),
-        ),
+        // leading: GestureDetector(
+        //   onTap: () {/* Write listener code here */},
+        //   child: Icon(
+        //     Icons.menu, // add custom icons also
+        //   ),
+        // ),
       ),
+      drawer: MainDrawer(),
       body: Center(
         child: cb.Chessboard(
           fen: _fen,

@@ -32,12 +32,13 @@ class MyApp extends StatelessWidget {
 
       // home: MainScreen(),
       // initialRoute: '/',
-      // routes: {
-      //   FindDevicesScreen.routeName: (ctx) => FindDevicesScreen(),
-      //   OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
-      //   SettingPage.routeName: (ctx) => SettingPage(),
-      //   '/': (ctx) => MainScreen(),
-      // },
+      routes: {
+        FindDevicesScreen.routeName: (ctx) => FindDevicesScreen(),
+        TabScreen.routeName: (ctx) => TabScreen(),
+        SettingPage.routeName: (ctx) => SettingPage(),
+
+        // '/': (ctx) => MainScreen(),
+      },
     );
   }
 }

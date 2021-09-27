@@ -3,6 +3,7 @@ import 'offline_chess_page.dart';
 import 'ble_search_page.dart';
 
 class TabScreen extends StatefulWidget {
+  static const routeName = '/tab_screen_page';
   @override
   _TabScreenState createState() => _TabScreenState();
 }
@@ -24,7 +25,7 @@ class _TabScreenState extends State<TabScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(
-      //   title: Text('Clio Chess'),
+      //   title: Text(_pages[_selectedPageIndex]['title']),
       // ),
       body: _pages[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(

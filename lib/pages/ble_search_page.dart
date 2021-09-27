@@ -1,10 +1,11 @@
 // Find BLE device page
 import 'dart:async';
+import '../widgets/main_drawer.dart';
 
 import 'package:flutter/material.dart';
 import 'live_chessboard_page.dart';
 import 'home_page.dart';
-import '../widgets.dart';
+import '../widgets/widgets.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
 class FlutterBlueApp extends StatelessWidget {
@@ -71,12 +72,6 @@ class FindDevicesScreen extends StatelessWidget {
         //       Navigator.popUntil(context, ModalRoute.withName('/'));
         //     }),
         title: Text('Find Devices'),
-        leading: GestureDetector(
-          onTap: () {/* Write listener code here */},
-          child: Icon(
-            Icons.menu, // add custom icons also
-          ),
-        ),
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 20.0),
@@ -97,6 +92,7 @@ class FindDevicesScreen extends StatelessWidget {
           //     )),
         ],
       ),
+      drawer: MainDrawer(),
       body: RefreshIndicator(
         onRefresh: () =>
             FlutterBlue.instance.startScan(timeout: Duration(seconds: 4)),
@@ -171,8 +167,8 @@ class FindDevicesScreen extends StatelessWidget {
       //         onPressed: () =>
       //             FlutterBlue.instance.startScan(timeout: Duration(seconds: 4)),
       //       );
-          // }
-        // },
+      // }
+      // },
       // ),
     );
   }
