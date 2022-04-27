@@ -37,11 +37,11 @@ class _TabScreenState extends State<TabScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.apps_rounded),
-            title: Text('CB'),
+            label: 'CB',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.alarm_rounded),
-            title: Text('Live'),
+            label: 'Live',
           ),
         ],
       ),
