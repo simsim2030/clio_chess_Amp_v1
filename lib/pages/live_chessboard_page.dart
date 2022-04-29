@@ -95,10 +95,10 @@ class _LiveChessboardPageState extends State<LiveChessboardPage> {
               title: Text('Are you sure?'),
               content: Text('Do you want to disconnect device and go back?'),
               actions: <Widget>[
-                new FlatButton(
+                new TextButton(
                     onPressed: () => Navigator.of(context).pop(false),
                     child: new Text('No')),
-                new FlatButton(
+                new TextButton(
                     onPressed: () {
                       disconnectFromDevice();
                       Navigator.of(context).pop(true);
