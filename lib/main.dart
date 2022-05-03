@@ -3,10 +3,12 @@ import 'package:clio_chess_app/pages/history_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/ble_search_page.dart';
+import 'Screens/Login/login_page.dart';
 import 'pages/offline_chess_page.dart';
 import 'pages/setting_page.dart';
 import 'pages/tab_menu.dart';
 import 'pages/home_page.dart';
+import 'package:clio_chess_app/constants.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
         SettingPage.routeName: (ctx) => SettingPage(),
         HistoryPage.routeName: (ctx) => HistoryPage(),
         OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
-
+        LoginPage.routeName: (ctx) => LoginPage()
         // '/': (ctx) => MainScreen(),
       },
     );

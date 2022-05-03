@@ -24,6 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_blue: ^0.6.2
+  flutter_svg: "0.21.0-nullsafety.1"
 
   flutter_stateless_chessboard: ^0.0.6
 
@@ -47,7 +48,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/chess_squares.jpg
-  #  - images/a_dot_burr.jpeg
+    - assets/images/
+    - assets/icons/
+    
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

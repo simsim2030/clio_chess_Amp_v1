@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:clio_chess_app/Screens/Welcomes/components/body.dart';
+import 'package:clio_chess_app/Screens/Welcomes/components/welcome_body.dart';
 
 class WelcomeScreen extends StatelessWidget {
 
