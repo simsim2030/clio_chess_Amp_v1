@@ -1,4 +1,5 @@
-import 'package:clio_chess_app/Screens/Welcomes/components/wlecome_background.dart';
+import 'package:clio_chess_app/Screens/Signup/signup_page.dart';
+import 'package:clio_chess_app/Screens/Welcome/components/wlecome_background.dart';
 import 'package:clio_chess_app/components/rounded_button.dart';
 import 'package:clio_chess_app/Screens/Login/login_page.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,9 @@ class Body extends StatelessWidget {
               text: "SIGNUP",
               color: Colors.lightBlue,
               textColor: Colors.black,
-              press: () {},
+              press: () {
+                Navigator.of(context).pushNamed(SignupPage.routeName);
+              },
             ),
           ],
         ),

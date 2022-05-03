@@ -1,18 +1,13 @@
 import 'package:clio_chess_app/Screens/Login/components/already_have_an_account_check.dart';
-import 'package:clio_chess_app/Screens/Login/components/login_background.dart';
-import 'package:clio_chess_app/Screens/Signup/signup_page.dart';
+import 'package:clio_chess_app/Screens/Login/login_page.dart';
+import 'package:clio_chess_app/Screens/Signup/components/signup_background.dart';
 import 'package:clio_chess_app/components/rounded_button.dart';
 import 'package:clio_chess_app/components/rounded_input_field.dart';
 import 'package:clio_chess_app/components/rounded_password_field.dart';
-import 'package:clio_chess_app/components/text_field_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
-
+class SignupBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -21,17 +16,17 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "LOGIN",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            "SIGNUP",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          SizedBox(height: size.height * 0.03),
           SvgPicture.asset(
-            "assets/icons/login.svg",
+            "assets/icons/signup.svg",
             height: size.height * 0.35,
           ),
-          SizedBox(height: size.height * 0.03),
           RoundedInputField(
-            hintText: "Email",
+            hintText: "Your Email",
             onChanged: (value) {},
           ),
           RoundedPasswordField(
@@ -39,13 +34,13 @@ class Body extends StatelessWidget {
             onChanged: (value) {},
           ),
           RoundedButton(
-            text: "LOGIN",
+            text: "SIGNUP",
             press: () {},
           ),
-          SizedBox(height: size.height * 0.03),
           AlreadyHaveAnAccountCheck(
+            login: false,
             press: () {
-              Navigator.of(context).pushNamed(SignupPage.routeName);
+              Navigator.of(context).pushNamed(LoginPage.routeName);
             },
           ),
         ],
@@ -53,4 +48,3 @@ class Body extends StatelessWidget {
     );
   }
 }
-

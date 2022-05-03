@@ -1,7 +1,8 @@
-import 'package:clio_chess_app/Screens/Welcomes/welcome_screen.dart';
+import 'package:clio_chess_app/Screens/Welcome/welcome_screen.dart';
 import 'package:clio_chess_app/pages/history_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Screens/Signup/signup_page.dart';
 import 'pages/ble_search_page.dart';
 import 'Screens/Login/login_page.dart';
 import 'pages/offline_chess_page.dart';
@@ -42,7 +43,8 @@ class MyApp extends StatelessWidget {
         SettingPage.routeName: (ctx) => SettingPage(),
         HistoryPage.routeName: (ctx) => HistoryPage(),
         OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
-        LoginPage.routeName: (ctx) => LoginPage()
+        LoginPage.routeName: (ctx) => LoginPage(),
+        SignupPage.routeName: (ctx) => SignupPage(),
         // '/': (ctx) => MainScreen(),
       },
     );
