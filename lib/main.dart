@@ -1,3 +1,5 @@
+import 'package:clio_chess_app/Screens/ChessClock/chessclock.dart';
+import 'package:clio_chess_app/Screens/OfflineMode/offlinemode_screen.dart';
 import 'package:clio_chess_app/Screens/Welcome/welcome_screen.dart';
 import 'package:clio_chess_app/pages/history_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'Screens/Signup/signup_page.dart';
 import 'pages/ble_search_page.dart';
 import 'Screens/Login/login_page.dart';
-import 'pages/offline_chess_page.dart';
+import 'Screens/OfflineChess/offline_chess_page.dart';
 import 'pages/setting_page.dart';
 import 'pages/tab_menu.dart';
 import 'pages/home_page.dart';
@@ -45,6 +47,8 @@ class MyApp extends StatelessWidget {
         OfflineChessPage.routeName: (ctx) => OfflineChessPage(),
         LoginPage.routeName: (ctx) => LoginPage(),
         SignupPage.routeName: (ctx) => SignupPage(),
+        OfflineModePage.routeName: (ctx) => OfflineModePage(),
+        ChessClockPage.routeName: (ctx) => ChessClockPage(),
         // '/': (ctx) => MainScreen(),
       },
     );

@@ -1,7 +1,10 @@
+import 'package:clio_chess_app/Screens/OfflineChess/offline_chess_page.dart';
+import 'package:clio_chess_app/Screens/OfflineMode/offlinemode_screen.dart';
 import 'package:clio_chess_app/Screens/Signup/signup_page.dart';
 import 'package:clio_chess_app/Screens/Welcome/components/wlecome_background.dart';
 import 'package:clio_chess_app/components/rounded_button.dart';
 import 'package:clio_chess_app/Screens/Login/login_page.dart';
+import 'package:clio_chess_app/components/tap_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,15 +18,20 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: size.height * 0.05),
             Text(
-              "Welcome to CLio",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              "CLio",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 45,
+                color: Colors.white70,
+              ),
             ),
-            SizedBox(height: size.height * 0.03),
-            SvgPicture.asset(
-              "assets/icons/chat.svg",
-              height: size.height * 0.45,
-            ),
+            SizedBox(height: size.height * 0.4),
+            // SvgPicture.asset(
+            //   "assets/icons/chat.svg",
+            //   height: size.height * 0.45,
+            // ),
             SizedBox(height: size.height * 0.05),
             RoundedButton(
               text: "LOGIN",
@@ -32,11 +40,18 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: "SIGNUP",
+              text: "SIGN UP",
               color: Colors.lightBlue,
-              textColor: Colors.black,
+              textColor: Colors.white,
               press: () {
                 Navigator.of(context).pushNamed(SignupPage.routeName);
+              },
+            ),
+            SizedBox(height: size.height * 0.05),
+            TapButton(
+              text: "Offline Mode",
+              press: () {
+                Navigator.of(context).pushNamed(OfflineModePage.routeName);
               },
             ),
           ],

@@ -1,6 +1,6 @@
 import 'package:clio_chess_app/pages/tab_menu.dart';
 import 'package:flutter/material.dart';
-import '../pages/offline_chess_page.dart';
+import '../Screens/OfflineChess/offline_chess_page.dart';
 import '../pages/ble_search_page.dart';
 import '../pages/setting_page.dart';
 

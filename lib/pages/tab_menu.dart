@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'offline_chess_page.dart';
+import '../Screens/OfflineChess/offline_chess_page.dart';
 import 'ble_search_page.dart';
 
 class TabScreen extends StatefulWidget {

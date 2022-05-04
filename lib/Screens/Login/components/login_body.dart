@@ -7,8 +7,8 @@ import 'package:clio_chess_app/components/rounded_password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Body extends StatelessWidget {
-  const Body({
+class LoginBody extends StatelessWidget {
+  const LoginBody({
     Key key,
   }) : super(key: key);
 

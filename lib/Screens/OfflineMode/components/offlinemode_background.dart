@@ -4,7 +4,7 @@ class Background extends StatelessWidget {
   final Widget child;
   const Background({
     Key key,
-    @required this.child,
+    this.child,
   }) : super(key: key);
 
   @override
@@ -17,10 +17,7 @@ class Background extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           Center(
-            child: Image.asset(
-              "assets/images/Knight_background.jpg",
-              height: size.height,
-            ),
+            child: Image.asset("assets/images/offline_mode_backgraound.jpg"),
           ),
           child,
         ],

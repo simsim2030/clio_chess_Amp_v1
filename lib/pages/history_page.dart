@@ -14,10 +14,11 @@ class _HistoryPageState extends State<HistoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('History Games')
+        title: Text('History Games'),
       ),
       body: Center(
-        child: Text('TODO: History List'
+        child: Text(
+          'TODO: History List',
         ),
       ),
     );

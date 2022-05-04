@@ -1,6 +1,6 @@
 import 'package:clio_chess_app/pages/history_page.dart';
 import 'package:clio_chess_app/pages/live_chessboard_page.dart';
-import 'package:clio_chess_app/pages/offline_chess_page.dart';
+import 'package:clio_chess_app/Screens/OfflineChess/offline_chess_page.dart';
 import 'package:clio_chess_app/pages/setting_page.dart';
 import 'package:clio_chess_app/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
